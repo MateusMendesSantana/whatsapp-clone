@@ -1,9 +1,10 @@
-package com.mateusmendes.whatsappclone
+package com.mateusmendes.whatsappclone.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.widget.LinearLayout
+import com.mateusmendes.whatsappclone.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
