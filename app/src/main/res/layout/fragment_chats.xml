@@ -4,10 +4,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".view.ChatsFragment">
-
-    <TextView
+    <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Black fragment"
-            android:textAlignment="center"/>
+            android:layout_height="match_parent" android:id="@+id/chat_list"/>
 </FrameLayout>

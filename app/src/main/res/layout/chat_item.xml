@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imageChat"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:civ_border_width="0dp"
+            app:civ_shadow_radius="9"
+            app:civ_shadow_color="#3f51b5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            tools:srcCompat="@tools:sample/avatars"
+            app:srcCompat="@mipmap/ic_launcher_round"/>
+    <TextView
+            android:text="Chat Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textChatTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/imageChat"
+            app:layout_constraintTop_toTopOf="@+id/imageChat"
+            app:layout_constraintStart_toEndOf="@+id/imageChat"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginStart="16dp"
+            app:layout_constraintVertical_bias="0.13999999"
+            android:textColor="@color/black"
+            android:textFontWeight="700"
+            android:textSize="18sp"/>
+    <TextView
+            android:text="Last message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textLastMessage"
+            app:layout_constraintBottom_toBottomOf="@+id/imageChat"
+            app:layout_constraintTop_toTopOf="@+id/imageChat"
+            app:layout_constraintStart_toEndOf="@+id/imageChat"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginStart="16dp"
+            app:layout_constraintVertical_bias="0.98"
+            android:textFontWeight="700"
+            android:textSize="16sp"/>
+    <TextView
+            android:text="5:33 PM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textLastMessageDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textChatTitle"
+            app:layout_constraintTop_toTopOf="@+id/textChatTitle"
+    />
+</android.support.constraint.ConstraintLayout>
