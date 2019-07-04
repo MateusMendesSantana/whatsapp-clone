@@ -10,7 +10,7 @@ class TabsAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
     init {
         fragments.add(ChatsFragment())
         fragments.add(ChatsFragment())
-        fragments.add(ChatsFragment())
+        fragments.add(StatusFragment())
         fragments.add(ChatsFragment())
     }
 
