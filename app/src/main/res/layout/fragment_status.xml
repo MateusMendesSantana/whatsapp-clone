@@ -32,16 +32,19 @@
                         tools:srcCompat="@tools:sample/avatars"
                         app:srcCompat="@mipmap/ic_launcher_round"/>
                 <ImageView
+                        android:id="@+id/imageView"
                         android:src="@drawable/ic_add_circle"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/imageView"
+                        android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintHorizontal_bias="0.11"
-                        app:layout_constraintVertical_bias="0.93" android:tint="@color/colorSecondary"
-                        android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
+                        app:layout_constraintVertical_bias="0.93"
+                        android:tint="@color/colorSecondary"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"/>
                 <TextView
@@ -56,7 +59,9 @@
                         app:layout_constraintHorizontal_bias="0.0"
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
-                        android:textStyle="bold" android:paddingTop="5dp" android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingTop="5dp"
+                        android:textSize="18sp"
                         android:textColor="@color/black"/>
                 <TextView
                         android:text="Tap to add status update"
@@ -73,7 +78,8 @@
                         app:layout_constraintVertical_bias="1.0"
                         android:layout_marginEnd="16dp"
                         android:textStyle="bold"
-                        android:textColor="@android:color/darker_gray" android:paddingBottom="5dp"/>
+                        android:textColor="@android:color/darker_gray"
+                        android:paddingBottom="5dp"/>
             </android.support.constraint.ConstraintLayout>
             <TextView
                     android:text="Recent updates"
@@ -82,11 +88,14 @@
                     android:id="@+id/textRecentUpdates"
                     android:background="#E9E9E9"
                     android:textStyle="bold"
-                    android:paddingLeft="12dp" android:paddingRight="12dp" android:paddingTop="8dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="8dp"
                     android:paddingBottom="8dp"/>
             <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_recent_updates"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/recycler_recent_updates">
+                    android:layout_height="wrap_content">
             </android.support.v7.widget.RecyclerView>
             <TextView
                     android:text="Viewed updates"
@@ -95,11 +104,14 @@
                     android:id="@+id/textViewedUpdates"
                     android:background="#E9E9E9"
                     android:textStyle="bold"
-                    android:paddingLeft="12dp" android:paddingRight="12dp" android:paddingTop="8dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="8dp"
                     android:paddingBottom="8dp"/>
             <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_viewed_updates"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/recycler_viewed_updates">
+                    android:layout_height="wrap_content">
             </android.support.v7.widget.RecyclerView>
             <TextView
                     android:text="Muted updates"
@@ -108,11 +120,14 @@
                     android:id="@+id/textMutedUpdates"
                     android:background="#E9E9E9"
                     android:textStyle="bold"
-                    android:paddingLeft="12dp" android:paddingRight="12dp" android:paddingTop="8dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="8dp"
                     android:paddingBottom="8dp"/>
             <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_muted_updates"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/recycler_muted_updates"/>
+                    android:layout_height="wrap_content"/>
         </LinearLayout>
     </ScrollView>
 
