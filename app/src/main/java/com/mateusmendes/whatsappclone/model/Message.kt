@@ -1,5 +1,6 @@
 package com.mateusmendes.whatsappclone.model
 
+import java.io.Serializable
 import java.util.*
 
 class Message(
@@ -10,5 +11,5 @@ class Message(
     val isReceived: Boolean,
     val receivedAt: Date,
     val createdAt: Date
-) {
+): Serializable {
 }

@@ -10,7 +10,7 @@
             android:layout_height="match_parent"
             android:gravity="bottom|right">
         <android.support.design.widget.FloatingActionButton
-                android:id="@+id/floatingActionButton"
+                android:id="@+id/floating_action_button"
                 android:src="@drawable/ic_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
