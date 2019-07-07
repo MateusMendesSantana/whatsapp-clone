@@ -12,8 +12,9 @@ import kotlin.collections.ArrayList
 import java.text.SimpleDateFormat
 
 
-class StatusAdapter: RecyclerView.Adapter<StatusAdapter.StatusHolder>() {
-    var statusList: ArrayList<Status> = ArrayList()
+class StatusAdapter(
+    private val statusList: ArrayList<Status>
+): RecyclerView.Adapter<StatusAdapter.StatusHolder>() {
 
     class StatusHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textStatusTitle: TextView = view.findViewById(R.id.text_status_title)
@@ -30,7 +31,7 @@ class StatusAdapter: RecyclerView.Adapter<StatusAdapter.StatusHolder>() {
     override fun onBindViewHolder(holder: StatusHolder, position: Int) {
         val status = statusList[position]
 
-        holder.textStatusTitle.text = status.owner.username
+        holder.textStatusTitle.text = status.owner?.username
 
         val minutes = (Date().time - status.createdAt.time) / 1000 / 60
 

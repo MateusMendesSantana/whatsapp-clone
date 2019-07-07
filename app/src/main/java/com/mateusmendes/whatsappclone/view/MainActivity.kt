@@ -6,12 +6,16 @@ import android.support.design.widget.TabLayout
 import android.widget.LinearLayout
 import com.mateusmendes.whatsappclone.R
 import kotlinx.android.synthetic.main.activity_main.*
+import com.mateusmendes.whatsappclone.presenter.UserPresenter
+import com.mateusmendes.whatsappclone.presenter.UserPresenterInterface
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var userPresenter: UserPresenterInterface
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        userPresenter = UserPresenter(resources)
         supportActionBar?.elevation = 0f
         view_pager.adapter = TabsAdapter(supportFragmentManager)
         view_pager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab_layout))

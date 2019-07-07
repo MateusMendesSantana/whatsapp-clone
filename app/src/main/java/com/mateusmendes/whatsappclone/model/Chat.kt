@@ -1,12 +1,14 @@
 package com.mateusmendes.whatsappclone.model
 
 import java.io.Serializable
+import kotlin.collections.ArrayList
 
 class Chat(
-    val id: String,
     val name: String,
-    val owner: User,
-    val participants: ArrayList<User>,
-    val messages: ArrayList<Message>
-): Serializable {
+    val ownerId: String,
+    val participantsId: ArrayList<String>,
+    val owner: User?
+): BaseModel(), Serializable {
+    val participants = ArrayList<User>()
+    val messages = ArrayList<Message>()
 }

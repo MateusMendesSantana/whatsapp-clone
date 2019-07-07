@@ -1,0 +1,40 @@
+[
+  {
+    "id": "85829185-66f6-4023-964f-b776121b08c4",
+    "name": "Alice Santos",
+    "ownerId": "ccf50b44-a610-42db-951f-582a712d858e",
+    "participantsId": ["ccf50b44-a610-42db-951f-582a712d858e"],
+    "messages": [
+      {
+        "content": "Message text",
+        "createdAt": "2019-07-07T13:32:24-05",
+        "ownerId": "ccf50b44-a610-42db-951f-582a712d858e"
+      },
+      {
+        "content": "Message text",
+        "createdAt": "2019-07-07T13:32:24-05",
+        "ownerId": "ccf50b44-a610-42db-951f-582a712d858e"
+      },
+      {
+        "content": "Message text",
+        "createdAt": "2019-07-07T13:32:24-05",
+        "ownerId": "ccf50b44-a610-42db-951f-582a712d858e"
+      },
+      {
+        "content": "Message text",
+        "createdAt": "2019-07-07T13:32:24-05",
+        "ownerId": "ccf50b44-a610-42db-951f-582a712d858e"
+      },
+      {
+        "content": "Message text",
+        "createdAt": "2019-07-07T13:32:24-05",
+        "ownerId": "ccf50b44-a610-42db-951f-582a712d858e"
+      },
+      {
+        "content": "Message text",
+        "createdAt": "2019-07-07T13:32:24-05",
+        "ownerId": "ccf50b44-a610-42db-951f-582a712d858e"
+      }
+    ]
+  }
+]

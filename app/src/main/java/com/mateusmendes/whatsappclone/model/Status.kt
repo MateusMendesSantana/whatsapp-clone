@@ -1,12 +1,11 @@
 package com.mateusmendes.whatsappclone.model
 
 import java.io.Serializable
-import java.util.*
+import kotlin.collections.ArrayList
 
 class Status(
-    val id: String,
-    val createdAt: Date,
-    val owner: User,
-    val vizializedBy: ArrayList<User>
-): Serializable {
+    val ownerId: String,
+    var owner: User?
+): BaseModel(), Serializable {
+    val visualizedBy = ArrayList<User>()
 }

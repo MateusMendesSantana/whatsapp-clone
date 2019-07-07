@@ -8,9 +8,11 @@ import android.widget.TextView
 import com.mateusmendes.whatsappclone.R
 import com.mateusmendes.whatsappclone.model.Message
 
-class MessagesAdapter: RecyclerView.Adapter<MessagesAdapter.MessageHolder>() {
+class MessagesAdapter(
+    private val userId: String,
+    private val chatList: ArrayList<Message>
+): RecyclerView.Adapter<MessagesAdapter.MessageHolder>() {
     private var clickListener: ClickListener? = null
-    var chatList: ArrayList<Message> = ArrayList()
 
     inner class MessageHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener, View.OnLongClickListener {
         val textMessage: TextView = view.findViewById(R.id.textMessage)

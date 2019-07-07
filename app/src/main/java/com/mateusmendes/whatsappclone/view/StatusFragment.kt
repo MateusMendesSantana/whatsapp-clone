@@ -9,12 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.mateusmendes.whatsappclone.R
-import com.mateusmendes.whatsappclone.model.Status
-import com.mateusmendes.whatsappclone.model.User
-import java.util.*
-import kotlin.collections.ArrayList
+import com.mateusmendes.whatsappclone.presenter.StatusPresenter
+import com.mateusmendes.whatsappclone.presenter.StatusPresenterInterface
 
 class StatusFragment : Fragment() {
+    lateinit var statusPresenter: StatusPresenterInterface
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,22 +23,8 @@ class StatusFragment : Fragment() {
         val recyclerRecentUpdates: RecyclerView = view.findViewById(R.id.recycler_recent_updates)
         val recyclerViewedUpdates: RecyclerView = view.findViewById(R.id.recycler_viewed_updates)
         val recyclerMutedUpdates: RecyclerView = view.findViewById(R.id.recycler_muted_updates)
-        val statusAdapter = StatusAdapter()
-
-        val status = Status("",Date(), User("","Mateus Mendes","", ""), ArrayList())
-        statusAdapter.statusList.add(status)
-        statusAdapter.statusList.add(status)
-        statusAdapter.statusList.add(status)
-        statusAdapter.statusList.add(status)
-        statusAdapter.statusList.add(status)
-        statusAdapter.statusList.add(status)
-        statusAdapter.statusList.add(status)
-        statusAdapter.statusList.add(status)
-        statusAdapter.statusList.add(status)
-        statusAdapter.statusList.add(status)
-        statusAdapter.statusList.add(status)
-        statusAdapter.statusList.add(status)
-        statusAdapter.statusList.add(status)
+        statusPresenter = StatusPresenter(resources)
+        val statusAdapter = StatusAdapter(statusPresenter.loadAll())
 
         recyclerRecentUpdates.isNestedScrollingEnabled = false
         recyclerViewedUpdates.isNestedScrollingEnabled = false

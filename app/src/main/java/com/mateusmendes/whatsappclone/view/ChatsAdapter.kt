@@ -9,9 +9,10 @@ import com.mateusmendes.whatsappclone.R
 import com.mateusmendes.whatsappclone.model.Chat
 import java.text.SimpleDateFormat
 
-class ChatsAdapter: RecyclerView.Adapter<ChatsAdapter.ChatsHolder>() {
+class ChatsAdapter(
+    val chatList: ArrayList<Chat>
+): RecyclerView.Adapter<ChatsAdapter.ChatsHolder>() {
     private var clickListener: ClickListener? = null
-    var chatList: ArrayList<Chat> = ArrayList()
 
     inner class ChatsHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener, View.OnLongClickListener {
         val textChatTitle: TextView = view.findViewById(R.id.textChatTitle)
@@ -61,7 +62,7 @@ class ChatsAdapter: RecyclerView.Adapter<ChatsAdapter.ChatsHolder>() {
     }
 
     interface ClickListener {
-        fun onItemClick(position: Int, v: View)
-        fun onItemLongClick(position: Int, v: View)
+        fun onItemClick(index: Int, view: View)
+        fun onItemLongClick(index: Int, view: View)
     }
 }
