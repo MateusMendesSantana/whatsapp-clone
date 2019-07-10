@@ -89,7 +89,6 @@
                 android:pivotY="0%"
                 android:toDegrees="0">
             <shape android:shape="rectangle">
-                <corners android:radius="8dp"/>
                 <solid android:color="@color/white" />
             </shape>
         </rotate>

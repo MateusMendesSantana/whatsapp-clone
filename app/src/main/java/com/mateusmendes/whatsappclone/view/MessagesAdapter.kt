@@ -28,10 +28,21 @@ class MessagesAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.message_item_in, parent, false)
+        val layout = when(viewType) {
+            0 -> R.layout.message_item_out
+            1 -> R.layout.message_item_in
+            else -> R.layout.message_item_out
+        }
+
+        val view = LayoutInflater.from(parent.context).inflate(layout, parent, false)
 
         return MessageHolder(view)
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        val message = chatList[position]
+
+        return if (message.ownerId == userId) 1 else 0
     }
 
     override fun onBindViewHolder(holder: MessageHolder, position: Int) {

@@ -12,51 +12,66 @@
     <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_chat"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            android:layout_marginBottom="8dp"
+    />
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/floatingActionButton3"
-            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/sendButton"
+            android:layout_marginStart="6dp"
             app:layout_constraintHorizontal_bias="0.0"
             android:layout_marginBottom="5dp"
             android:layout_marginEnd="60dp"
             android:background="@drawable/round_button"
-            android:paddingLeft="10dp">
-        <Button
-                android:layout_width="32dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/button2"
+            android:paddingLeft="8dp"
+            android:id="@+id/linearLayout"
+            android:minHeight="50dp">
+        <ImageButton
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                app:srcCompat="@drawable/ic_insert_emoticon"
+                android:id="@+id/imageButton"
                 android:layout_weight="1"
-                android:background="@drawable/ic_emoctions"
-                android:layout_gravity="center_vertical"/>
+                android:tint="@android:color/darker_gray"
+                android:scaleType="fitXY"
+                style="@android:style/Widget.ImageButton"
+                android:background="@null"
+                android:layout_gravity="bottom|left"
+                android:adjustViewBounds="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="2dp"
+                android:paddingRight="8dp"/>
         <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:text="Name"
+                android:inputType="textMultiLine|text"
                 android:ems="10"
                 android:id="@+id/editText"
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical"
-                android:layout_marginRight="26dp"/>
+                android:layout_marginRight="26dp"
+                android:background="@null"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
     </LinearLayout>
     <android.support.design.widget.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:clickable="true"
-            app:srcCompat="@drawable/ic_mic"
-            android:id="@+id/floatingActionButton3"
+            app:srcCompat="@drawable/ic_send"
+            android:id="@+id/sendButton"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginEnd="5dp"
-            app:backgroundTint="@color/colorPrimary"/>
+            app:backgroundTint="@color/colorPrimary"
+            app:fabCustomSize="50dp"/>
 </android.support.constraint.ConstraintLayout>

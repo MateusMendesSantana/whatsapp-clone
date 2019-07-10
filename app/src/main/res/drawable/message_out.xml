@@ -18,14 +18,14 @@
             </shape>
         </rotate>
     </item>
-    <item android:right="10dp">
+    <item android:right="8dp">
         <shape android:shape="rectangle">
-            <corners android:radius="8dp" />
             <padding
                     android:bottom="1px"
                     android:left="1px"
                     android:right="1px" />
             <solid android:color="#01000000" />
+            <corners android:radius="8dp" />
         </shape>
     </item>
 
