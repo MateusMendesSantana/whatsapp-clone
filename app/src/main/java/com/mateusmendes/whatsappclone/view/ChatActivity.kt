@@ -12,27 +12,36 @@ import kotlinx.android.synthetic.main.activity_chat.*
 import android.widget.Toast
 import android.view.MenuItem
 import android.view.Menu
+import com.mateusmendes.whatsappclone.model.Message
 import com.mateusmendes.whatsappclone.model.User
 import kotlinx.android.synthetic.main.chat_toolbar.*
-import kotlinx.android.synthetic.main.chat_toolbar.view.*
 
 class ChatActivity : AppCompatActivity() {
-    lateinit var userPresenter: UserPresenterInterface
+    private lateinit var userPresenter: UserPresenterInterface
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
-        val toolbar = includeToolbar!! as Toolbar
-        toolbar.setNavigationOnClickListener { onBackPressed() }
-        setSupportActionBar(toolbar)
 
         userPresenter = UserPresenter(resources)
 
         val chat = intent.getSerializableExtra("chat") as Chat
-        val user = userPresenter.getUser()
-        val messagesAdapter = MessagesAdapter(user.id, chat.messages)
 
+        configureToolbar()
         setUserInfo(chat.owner!!)
+        configureRecycler(chat.messages)
+    }
+
+    private fun configureToolbar() {
+        val toolbar = includeToolbar!! as Toolbar
+
+        toolbar.setNavigationOnClickListener { onBackPressed() }
+        setSupportActionBar(toolbar)
+    }
+
+    private fun configureRecycler(messages: ArrayList<Message>) {
+        val user = userPresenter.getUser()
+        val messagesAdapter = MessagesAdapter(user.id, messages)
 
         recycler_chat.apply {
             setHasFixedSize(true)
@@ -49,7 +58,6 @@ class ChatActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.home -> onBackPressed()
             R.id.action_call -> {
                 Toast.makeText(this, "Action call clicked", Toast.LENGTH_LONG).show()
             }
@@ -63,6 +71,6 @@ class ChatActivity : AppCompatActivity() {
 
     private fun setUserInfo(user: User) {
         chatUsername.text = user.username
-        chatUserLastSeen.text = "online"
+        textTotalContacts.text = "online"
     }
 }

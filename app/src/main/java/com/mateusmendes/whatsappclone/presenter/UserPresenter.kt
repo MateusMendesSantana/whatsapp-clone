@@ -13,4 +13,8 @@ class UserPresenter(
     override fun getUser(): User {
         return userRepository.loadAll()[0]
     }
+
+    override fun loadAll(): ArrayList<User> {
+        return userRepository.loadAll()
+    }
 }

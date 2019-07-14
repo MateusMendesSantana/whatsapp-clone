@@ -22,4 +22,17 @@ class ChatPresenter(
 
         return list
     }
+
+    override fun getOrCreateChatByContact(id: String): Chat {
+        val chat = getChatByContact(id)
+        val user = userRepository.getById(id)
+
+        return chat ?: Chat("ggdfgfd", "", ArrayList(), user)
+    }
+
+    override fun getChatByContact(id: String): Chat? {
+        val list = loadAll()
+
+        return list.find { it.participantsId.contains(id) }
+    }
 }

@@ -11,8 +11,8 @@
             android:layout_marginStart="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/message_out" android:layout_alignParentRight="true">
-
+            android:background="@drawable/message_out"
+            android:layout_alignParentRight="true">
         <TextView
                 android:text="text view"
                 android:layout_width="wrap_content"
@@ -21,7 +21,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:textColor="@color/black"
+                android:textColor="@android:color/black"
                 android:textSize="16sp"
                 android:paddingLeft="8dp"
                 android:paddingTop="2dp"

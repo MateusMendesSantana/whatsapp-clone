@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools">
+    <item
+            android:id="@+id/action_search"
+            android:icon="@android:drawable/ic_menu_search"
+            android:title="Search"
+            app:actionViewClass="android.support.v7.widget.SearchView"
+            app:showAsAction="always"
+    />
+    <item
+            android:id="@+id/action_invite_friend"
+            android:title="invite a friend"
+            app:showAsAction="collapseActionView"
+    />
+    <item
+            android:id="@+id/action_med"
+            android:title="Contacts"
+            app:showAsAction="collapseActionView"
+    />
+    <item
+            android:id="@+id/action_refresh"
+            android:title="Refresh"
+            app:showAsAction="collapseActionView"
+    />
+    <item
+            android:id="@+id/action_help"
+            android:title="Help"
+            app:showAsAction="collapseActionView"
+    />
+</menu>

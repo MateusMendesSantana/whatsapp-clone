@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
     >
         <com.mikhaellopez.circularimageview.CircularImageView
-                android:id="@+id/imageChatUser"
+                android:id="@+id/imageContact"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 app:civ_border_width="0dp"
@@ -34,25 +34,25 @@
                 android:id="@+id/chatUsername"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_toEndOf="@id/imageChatUser"
-                android:layout_toRightOf="@+id/imageChatUser"
+                android:layout_toEndOf="@id/imageContact"
+                android:layout_toRightOf="@+id/imageContact"
                 android:text="User name"
-                android:layout_alignTop="@+id/imageChatUser"
-                android:layout_alignBottom="@+id/imageChatUser"
+                android:layout_alignTop="@+id/imageContact"
+                android:layout_alignBottom="@+id/imageContact"
                 android:gravity="center_vertical"
                 android:layout_alignParentEnd="true"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageChatUser"
+                app:layout_constraintStart_toEndOf="@+id/imageContact"
                 android:layout_marginStart="8dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintBottom_toTopOf="@+id/chatUserLastSeen"
+                app:layout_constraintBottom_toTopOf="@+id/textTotalContacts"
                 android:textSize="16sp"
                 android:ellipsize="end"/>
         <TextView
-                android:id="@+id/chatUserLastSeen"
+                android:id="@+id/textTotalContacts"
                 android:text="00:00 AM"
                 android:layout_width="0dp"
                 android:layout_height="14dp"
@@ -60,7 +60,7 @@
                 android:layout_alignEnd="@+id/chatUsername"
                 android:layout_alignTop="@+id/chatUsername"
                 app:layout_constraintEnd_toEndOf="@+id/chatUsername"
-                app:layout_constraintStart_toEndOf="@+id/imageChatUser"
+                app:layout_constraintStart_toEndOf="@+id/imageContact"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginStart="8dp"
                 android:textColor="@android:color/white"
@@ -71,16 +71,5 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:theme="@style/AppTheme.Toolbar">
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_call"
-                android:id="@+id/imageButton2"
-                android:layout_weight="1" android:background="@null"
-        />
-        <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" app:srcCompat="@drawable/ic_call" android:id="@+id/imageButton3"
-                android:layout_weight="1" android:background="@null"/>
     </android.support.v7.widget.ActionMenuView>
 </android.support.v7.widget.Toolbar>

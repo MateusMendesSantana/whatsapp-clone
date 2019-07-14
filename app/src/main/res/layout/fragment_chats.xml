@@ -5,13 +5,18 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".view.ChatsFragment">
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/chat_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
     <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="bottom|right">
         <android.support.design.widget.FloatingActionButton
-                android:id="@+id/floating_action_button"
-                android:src="@drawable/ic_message"
+                android:id="@+id/buttonMessages"
+                app:srcCompat="@drawable/ic_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
@@ -19,9 +24,4 @@
                 android:layout_marginBottom="16dp"
                 app:backgroundTint="@color/colorSecondary"/>
     </TableRow>
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/chat_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-    </android.support.v7.widget.RecyclerView>
 </FrameLayout>

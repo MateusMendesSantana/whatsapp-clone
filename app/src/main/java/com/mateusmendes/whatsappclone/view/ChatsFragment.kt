@@ -10,20 +10,42 @@ import android.view.ViewGroup
 
 import com.mateusmendes.whatsappclone.R
 import android.content.Intent
+import android.support.design.widget.FloatingActionButton
+import com.mateusmendes.whatsappclone.model.Chat
 import com.mateusmendes.whatsappclone.presenter.ChatPresenter
 import com.mateusmendes.whatsappclone.presenter.ChatPresenterInterface
 
 class ChatsFragment : Fragment() {
     lateinit var chatPresenter: ChatPresenterInterface
+    lateinit var recyclerViewChat: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_chats, container, false)
+
         chatPresenter = ChatPresenter(resources)
-        val chatList: RecyclerView = view.findViewById(R.id.chat_list)
-        val chatsAdapter = ChatsAdapter(chatPresenter.loadAll())
+        recyclerViewChat = view.findViewById(R.id.chat_list)
+
+        val chatList = chatPresenter.loadAll()
+
+        configureRecycler(chatList)
+
+        val buttonMessages: FloatingActionButton = view.findViewById(R.id.buttonMessages)
+
+        buttonMessages.bringToFront()
+        buttonMessages.setOnClickListener {
+            val intent = Intent(context, ContactListActivity::class.java)
+
+            startActivity(intent)
+        }
+
+        return view
+    }
+
+    private fun configureRecycler(chats: ArrayList<Chat>) {
+        val chatsAdapter = ChatsAdapter(chats)
 
         chatsAdapter.setOnItemClickListener(object:ChatsAdapter.ClickListener{
             override fun onItemClick(index: Int, view: View) {
@@ -38,12 +60,10 @@ class ChatsFragment : Fragment() {
             }
         })
 
-        chatList.apply {
+        recyclerViewChat.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(context)
             adapter = chatsAdapter
         }
-
-        return view
     }
 }
