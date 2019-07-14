@@ -22,11 +22,11 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"
                 app:tabIndicatorHeight="3dp"
-                app:tabIndicatorColor="@color/white"
+                app:tabIndicatorColor="@android:color/white"
                 app:tabTextColor="@color/textTab"
-                app:tabSelectedTextColor="@color/white"
+                app:tabSelectedTextColor="@android:color/white"
                 app:tabIconTint="@color/textTab"
-                app:tabRippleColor="@color/white"
+                app:tabRippleColor="@android:color/white"
                 app:layout_constraintStart_toStartOf="parent">
 
             <android.support.design.widget.TabItem

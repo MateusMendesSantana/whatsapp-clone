@@ -7,7 +7,7 @@ class Chat(
     val name: String,
     val ownerId: String,
     val participantsId: ArrayList<String>,
-    val owner: User?
+    var owner: User?
 ): BaseModel(), Serializable {
     val participants = ArrayList<User>()
     val messages = ArrayList<Message>()

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools">
+    <item
+            android:id="@+id/action_videocam"
+            android:title="User"
+            android:icon="@drawable/ic_videocam"
+            app:showAsAction="always"
+    />
+    <item
+            android:id="@+id/action_call"
+            android:title="User"
+            android:icon="@drawable/ic_call"
+            app:showAsAction="always"
+    />
+
+    <item
+            android:id="@+id/action_view_contact"
+            android:title="View contant"
+            app:showAsAction="collapseActionView"
+    />
+    <item
+            android:id="@+id/action_media"
+            android:title="Media"
+            app:showAsAction="collapseActionView"
+    />
+    <item
+            android:id="@+id/action_search"
+            android:title="Search"
+            app:showAsAction="collapseActionView"
+    />
+    <item
+            android:id="@+id/action_mute_notifications"
+            android:title="Mute notifications"
+            app:showAsAction="collapseActionView"
+    />
+    <item
+            android:id="@+id/action_wallpaper"
+            android:title="Wallpaper"
+            app:showAsAction="collapseActionView"
+    />
+    <item
+            android:id="@+id/action_report"
+            android:title="Report"
+            app:showAsAction="collapseActionView"
+    />
+    <item
+            android:id="@+id/action_block"
+            android:title="Block"
+            app:showAsAction="collapseActionView"
+    />
+    <item
+            android:id="@+id/action_clear_chat"
+            android:title="Clear chat"
+            app:showAsAction="collapseActionView"
+    />
+    <item
+            android:id="@+id/action_export_chat"
+            android:title="Export chat"
+            app:showAsAction="collapseActionView"
+    />
+    <item
+            android:id="@+id/action_add_shortcut"
+            android:title="Add shortcut"
+            app:showAsAction="collapseActionView"
+    />
+</menu>
