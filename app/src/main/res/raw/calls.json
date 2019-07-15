@@ -1,0 +1,26 @@
+[
+  {
+    "ownerId": "ccf50b44-a610-42db-951f-582a712d858e",
+    "createdAt": "2019-07-07T13:32:24-05",
+    "participantsId": [
+      "ccf50b44-a610-42db-951f-582a712d858e",
+      "758c4d03-f89b-44d4-82d0-a185817a384c"
+    ]
+  },
+  {
+    "ownerId": "758c4d03-f89b-44d4-82d0-a185817a384c",
+    "createdAt": "2019-07-07T13:32:24-05",
+    "participantsId": [
+      "ccf50b44-a610-42db-951f-582a712d858e",
+      "758c4d03-f89b-44d4-82d0-a185817a384c"
+    ]
+  },
+  {
+    "ownerId": "ccf50b44-a610-42db-951f-582a712d858e",
+    "createdAt": "2019-07-07T13:32:24-05",
+    "participantsId": [
+      "ccf50b44-a610-42db-951f-582a712d858e",
+      "758c4d03-f89b-44d4-82d0-a185817a384c"
+    ]
+  }
+]

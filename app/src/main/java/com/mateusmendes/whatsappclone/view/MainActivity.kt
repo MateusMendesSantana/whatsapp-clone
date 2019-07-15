@@ -17,8 +17,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         userPresenter = UserPresenter(resources)
         supportActionBar?.elevation = 0f
-        view_pager.adapter = TabsAdapter(supportFragmentManager)
-        view_pager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab_layout))
+
+        view_pager.apply {
+            adapter = TabsAdapter(supportFragmentManager)
+            addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab_layout))
+        }
+
         tab_layout.setTabWidthAsWrapContent(0)
     }
 

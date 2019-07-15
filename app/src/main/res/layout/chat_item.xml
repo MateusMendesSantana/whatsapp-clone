@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="wrap_content">
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/imageContact"
@@ -18,13 +19,12 @@
             android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
-            tools:srcCompat="@tools:sample/avatars"
-            app:srcCompat="@mipmap/ic_launcher_round"/>
+            app:srcCompat="@drawable/ic_profile"/>
     <TextView
             android:text="Chat Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textChatTitle"
+            android:id="@+id/textUsername"
             app:layout_constraintBottom_toBottomOf="@+id/imageContact"
             app:layout_constraintTop_toTopOf="@+id/imageContact"
             app:layout_constraintStart_toEndOf="@+id/imageContact"
@@ -58,7 +58,7 @@
             android:id="@+id/textLastMessageDate"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="12dp"
-            app:layout_constraintBottom_toBottomOf="@+id/textChatTitle"
-            app:layout_constraintTop_toTopOf="@+id/textChatTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/textUsername"
+            app:layout_constraintTop_toTopOf="@+id/textUsername"
     />
 </android.support.constraint.ConstraintLayout>

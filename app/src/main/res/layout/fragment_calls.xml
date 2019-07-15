@@ -5,9 +5,9 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.ChatsFragment">
+        tools:context=".view.CallsFragment">
     <android.support.v7.widget.RecyclerView
-            android:id="@+id/chat_list"
+            android:id="@+id/callRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
@@ -16,8 +16,8 @@
             android:layout_height="match_parent"
             android:gravity="bottom|right">
         <android.support.design.widget.FloatingActionButton
-                android:id="@+id/buttonMessages"
-                app:srcCompat="@drawable/ic_message"
+                android:id="@+id/buttonNewCall"
+                app:srcCompat="@drawable/ic_phone_forwarded"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"

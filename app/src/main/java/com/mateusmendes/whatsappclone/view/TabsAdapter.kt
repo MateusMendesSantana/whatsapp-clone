@@ -11,7 +11,7 @@ class TabsAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
         fragments.add(ChatsFragment())
         fragments.add(ChatsFragment())
         fragments.add(StatusFragment())
-        fragments.add(ChatsFragment())
+        fragments.add(CallsFragment())
     }
 
     override fun getItem(position: Int): Fragment {

@@ -15,7 +15,7 @@ class ChatsAdapter(
     private var clickListener: ClickListener? = null
 
     inner class ChatsHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener, View.OnLongClickListener {
-        val textChatTitle: TextView = view.findViewById(R.id.textChatTitle)
+        val textChatTitle: TextView = view.findViewById(R.id.textUsername)
         val textLastMessage: TextView = view.findViewById(R.id.textLastMessage)
         val textLastMessageDate: TextView = view.findViewById(R.id.textLastMessageDate)
 
@@ -35,8 +35,7 @@ class ChatsAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatsHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.chat_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.chat_item, parent, false)
 
         return ChatsHolder(view)
     }
