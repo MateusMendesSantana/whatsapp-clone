@@ -1,5 +1,6 @@
 package com.mateusmendes.whatsappclone.view
 
+import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +8,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.mateusmendes.whatsappclone.R
 import com.mateusmendes.whatsappclone.model.User
+import com.mateusmendes.whatsappclone.resIdByName
 import com.mikhaellopez.circularimageview.CircularImageView
 
 class ContactAdapter(
+    private val context: Context,
     private val contactList: ArrayList<User>
 ): RecyclerView.Adapter<ContactAdapter.ContactHolder>() {
     private var clickListener: ClickListener? = null
@@ -42,7 +45,9 @@ class ContactAdapter(
 
     override fun onBindViewHolder(holder: ContactHolder, position: Int) {
         val contact = contactList[position]
+        val res = context.resIdByName(contact.profilePicture, "drawable")
 
+        holder.imageContact.setImageResource(res)
         holder.textContactName.text = contact.username
         holder.textContactDescription.text = contact.description
     }

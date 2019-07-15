@@ -13,9 +13,9 @@ import com.mikhaellopez.circularimageview.CircularImageView
 import java.text.SimpleDateFormat
 
 class ChatsAdapter(
-    val userId: String,
-    val context: Context,
-    val chatList: ArrayList<Chat>
+    private val userId: String,
+    private val context: Context,
+    private val chatList: ArrayList<Chat>
 ): RecyclerView.Adapter<ChatsAdapter.ChatsHolder>() {
     private var clickListener: ClickListener? = null
 

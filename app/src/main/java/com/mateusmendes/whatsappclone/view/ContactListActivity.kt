@@ -44,7 +44,7 @@ class ContactListActivity : AppCompatActivity() {
     }
 
     private fun configureRecycler(contacts: ArrayList<User>) {
-        val contactAdapter = ContactAdapter(contacts)
+        val contactAdapter = ContactAdapter(this, contacts)
 
         contactAdapter.setOnItemClickListener(object:ContactAdapter.ClickListener{
             override fun onItemClick(index: Int, view: View) {

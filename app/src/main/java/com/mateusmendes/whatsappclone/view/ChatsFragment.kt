@@ -56,7 +56,7 @@ class ChatsFragment : Fragment() {
             override fun onItemClick(index: Int, view: View) {
                 val intent = Intent(context, ChatActivity::class.java)
 
-                intent.putExtra("chat", chatsAdapter.chatList[index])
+                intent.putExtra("chat", chatsAdapter.getItemId(index))
                 startActivity(intent)
             }
 
