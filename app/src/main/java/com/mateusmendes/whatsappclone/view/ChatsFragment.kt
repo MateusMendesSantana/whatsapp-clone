@@ -14,9 +14,12 @@ import android.support.design.widget.FloatingActionButton
 import com.mateusmendes.whatsappclone.model.Chat
 import com.mateusmendes.whatsappclone.presenter.ChatPresenter
 import com.mateusmendes.whatsappclone.presenter.ChatPresenterInterface
+import com.mateusmendes.whatsappclone.presenter.UserPresenter
+import com.mateusmendes.whatsappclone.presenter.UserPresenterInterface
 
 class ChatsFragment : Fragment() {
     lateinit var chatPresenter: ChatPresenterInterface
+    lateinit var userPresenter: UserPresenterInterface
     lateinit var recyclerViewChat: RecyclerView
 
     override fun onCreateView(
@@ -26,6 +29,7 @@ class ChatsFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_chats, container, false)
 
         chatPresenter = ChatPresenter(resources)
+        userPresenter = UserPresenter(resources)
         recyclerViewChat = view.findViewById(R.id.chat_list)
 
         val chatList = chatPresenter.loadAll()
@@ -45,7 +49,8 @@ class ChatsFragment : Fragment() {
     }
 
     private fun configureRecycler(chats: ArrayList<Chat>) {
-        val chatsAdapter = ChatsAdapter(chats)
+        val userId = userPresenter.getUser().id
+        val chatsAdapter = ChatsAdapter(userId, context!!, chats)
 
         chatsAdapter.setOnItemClickListener(object:ChatsAdapter.ClickListener{
             override fun onItemClick(index: Int, view: View) {

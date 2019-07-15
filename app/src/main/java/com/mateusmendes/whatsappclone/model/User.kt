@@ -6,6 +6,7 @@ class User(
     val username: String,
     val email: String,
     val password: String,
-    val description: String
+    val description: String,
+    val profilePicture: String
 ): BaseModel(), Serializable {
 }

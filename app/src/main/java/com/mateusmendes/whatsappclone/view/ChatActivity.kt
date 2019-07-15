@@ -14,6 +14,7 @@ import android.view.MenuItem
 import android.view.Menu
 import com.mateusmendes.whatsappclone.model.Message
 import com.mateusmendes.whatsappclone.model.User
+import com.mateusmendes.whatsappclone.resIdByName
 import kotlinx.android.synthetic.main.chat_toolbar.*
 
 class ChatActivity : AppCompatActivity() {
@@ -28,7 +29,7 @@ class ChatActivity : AppCompatActivity() {
         val chat = intent.getSerializableExtra("chat") as Chat
 
         configureToolbar()
-        setUserInfo(chat.owner!!)
+        setInfo(chat)
         configureRecycler(chat.messages)
     }
 
@@ -69,8 +70,13 @@ class ChatActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun setUserInfo(user: User) {
-        chatUsername.text = user.username
+    private fun setInfo(chat: Chat) {
+        val userId = userPresenter.getUser().id
+        val profilePicture = chat.getProfilePicture(userId)
+        val profilePictureResource = resIdByName(profilePicture, "drawable")
+
+        imageContact.setImageResource(profilePictureResource)
+        chatUsername.text = chat.getChatName(userId)
         textTotalContacts.text = "online"
     }
 }

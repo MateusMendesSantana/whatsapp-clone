@@ -2,6 +2,7 @@ package com.mateusmendes.whatsappclone.presenter
 
 import android.content.res.Resources
 import com.mateusmendes.whatsappclone.model.Chat
+import com.mateusmendes.whatsappclone.model.User
 import com.mateusmendes.whatsappclone.repository.ChatRepository
 import com.mateusmendes.whatsappclone.repository.ChatRepositoryInterface
 import com.mateusmendes.whatsappclone.repository.UserRepository
@@ -16,18 +17,13 @@ class ChatPresenter(
     override fun loadAll(): ArrayList<Chat> {
         val list = chatRepository.loadAll()
 
-        list.forEach {
-            it.owner = userRepository.getById(it.ownerId)
+        list.forEach { chat ->
+            chat.participants = chat.participantsId.map {
+                userRepository.getById(it)!!
+            } as ArrayList<User>
         }
 
         return list
-    }
-
-    override fun getOrCreateChatByContact(id: String): Chat {
-        val chat = getChatByContact(id)
-        val user = userRepository.getById(id)
-
-        return chat ?: Chat("ggdfgfd", "", ArrayList(), user)
     }
 
     override fun getChatByContact(id: String): Chat? {

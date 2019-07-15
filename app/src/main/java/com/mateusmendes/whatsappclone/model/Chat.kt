@@ -5,10 +5,29 @@ import kotlin.collections.ArrayList
 
 class Chat(
     val name: String,
-    val ownerId: String,
-    val participantsId: ArrayList<String>,
-    var owner: User?
+    val profilePictureGroup: String?,
+    val participantsId: ArrayList<String>
 ): BaseModel(), Serializable {
-    val participants = ArrayList<User>()
+    var participants = ArrayList<User>()
     val messages = ArrayList<Message>()
+
+    fun getProfilePicture(userId: String): String {
+        return if(isGroup()) {
+            profilePictureGroup!!
+        } else {
+            participants.find { it.id != userId }!!.profilePicture
+        }
+    }
+
+    fun getChatName(userId: String): String {
+        return if(isGroup()) {
+            name
+        } else {
+            participants.find { it.id != userId }!!.username
+        }
+    }
+
+    fun isGroup(): Boolean {
+        return participantsId.size > 2
+    }
 }
