@@ -3,6 +3,7 @@ package com.mateusmendes.whatsappclone.view
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TabLayout
+import android.support.v4.view.ViewPager
 import android.widget.LinearLayout
 import com.mateusmendes.whatsappclone.R
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,6 +24,15 @@ class MainActivity : AppCompatActivity() {
             addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tab_layout))
         }
 
+        tab_layout.addOnTabSelectedListener(object: TabLayout.BaseOnTabSelectedListener<TabLayout.Tab> {
+            override fun onTabReselected(tab: TabLayout.Tab?) {}
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {}
+
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                view_pager.currentItem = tab!!.position
+            }
+        })
         tab_layout.setTabWidthAsWrapContent(0)
     }
 
