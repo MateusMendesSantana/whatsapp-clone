@@ -1,7 +1,7 @@
 package com.mateusmendes.whatsappclone.presenter
 
-import com.mateusmendes.whatsappclone.model.Status
+import com.mateusmendes.whatsappclone.dto.StatusDTO
 
 interface StatusPresenterInterface {
-    fun loadAll(): ArrayList<Status>
+    fun loadAll(): ArrayList<StatusDTO>
 }

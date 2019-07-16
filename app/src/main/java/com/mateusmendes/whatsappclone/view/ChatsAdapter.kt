@@ -65,6 +65,10 @@ class ChatsAdapter(
 
     override fun getItemCount() = chatList.size
 
+    fun getItem(index: Int): Chat {
+        return chatList[index]
+    }
+
     fun setOnItemClickListener(clickListener: ClickListener) {
         this.clickListener = clickListener
     }

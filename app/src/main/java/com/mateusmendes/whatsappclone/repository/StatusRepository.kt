@@ -13,4 +13,14 @@ class StatusRepository(
     object : TypeToken<ArrayList<Status>>(){}.type,
     ResourceUtil(resources)
 ), StatusRepositoryInterface {
+
+    override fun loadAll(): ArrayList<Status> {
+        val list = super.loadAll()
+
+        list.forEach { status ->
+            status.image = "status${(1..30).random()}"
+        }
+
+        return list
+    }
 }

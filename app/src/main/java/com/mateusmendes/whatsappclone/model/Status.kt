@@ -5,7 +5,10 @@ import kotlin.collections.ArrayList
 
 class Status(
     val ownerId: String,
-    var owner: User?
+    var image: String,
+    val description: String
 ): BaseModel(), Serializable {
-    val visualizedBy = ArrayList<User>()
+    val visualizedByIds = ArrayList<String>()
+    var visualizedBy = ArrayList<User>()
+    var owner: User? = null
 }
