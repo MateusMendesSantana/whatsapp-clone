@@ -6,5 +6,5 @@ import java.util.UUID.*
 
 open class BaseModel: Serializable {
     val id = randomUUID().toString()
-    val createdAt = Date()
+    var createdAt = Date()
 }

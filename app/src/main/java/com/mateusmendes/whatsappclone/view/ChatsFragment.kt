@@ -52,7 +52,7 @@ class ChatsFragment : Fragment() {
         val userId = userPresenter.getUser().id
         val chatsAdapter = ChatsAdapter(userId, context!!, chats)
 
-        chatsAdapter.setOnItemClickListener(object:ChatsAdapter.ClickListener{
+        chatsAdapter.setOnItemClickListener(object : ChatsAdapter.ClickListener {
             override fun onItemClick(index: Int, view: View) {
                 val intent = Intent(context, ChatActivity::class.java)
 
@@ -61,7 +61,6 @@ class ChatsFragment : Fragment() {
             }
 
             override fun onItemLongClick(index: Int, view: View) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
         })
 

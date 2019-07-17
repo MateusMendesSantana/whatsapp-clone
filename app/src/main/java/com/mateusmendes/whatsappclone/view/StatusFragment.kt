@@ -10,7 +10,6 @@ import android.view.ViewGroup
 
 import com.mateusmendes.whatsappclone.R
 import com.mateusmendes.whatsappclone.dto.StatusDTO
-import com.mateusmendes.whatsappclone.model.Status
 import com.mateusmendes.whatsappclone.presenter.StatusPresenter
 import com.mateusmendes.whatsappclone.presenter.StatusPresenterInterface
 

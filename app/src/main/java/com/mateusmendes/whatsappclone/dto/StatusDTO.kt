@@ -9,6 +9,8 @@ class StatusDTO(
     private val statusList = ArrayList<Status>()
     private var position = 0
     private var visualizedPosition = 0
+    private val circumference = 55 * Math.PI.toFloat()
+    private val gap = 4f
 
     fun addStatus(status: Status) {
         statusList.add(status)
@@ -54,5 +56,19 @@ class StatusDTO(
 
     fun lastStatus(): Status {
         return statusList.last()
+    }
+
+    fun getDashWidth(): Float {
+        val count = statusList.size
+
+        return (circumference / count) - (count * gap)
+    }
+
+    fun getDashGap(): Float {
+        return if(statusList.size <= 1) {
+            0f
+        } else {
+            gap
+        }
     }
 }

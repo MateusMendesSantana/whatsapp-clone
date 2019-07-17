@@ -6,6 +6,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+    <ImageView
+            android:id="@+id/imageBackground"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/dotted"/>
+
     <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/imageStatus"
             android:layout_width="55dp"
@@ -19,7 +31,9 @@
             android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
-            app:srcCompat="@drawable/ic_profile"/>
+            app:srcCompat="@drawable/ic_profile"
+            android:scaleX=".88"
+            android:scaleY=".88"/>
     <TextView
             android:text="Status Title"
             android:layout_width="wrap_content"
